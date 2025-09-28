@@ -98,8 +98,8 @@ export default function Navbar() {
 
   const unreadCount = notifications.filter(n => n.unread).length;
 
-  // Don't show navbar on landing page for non-logged-in users
-  if (!isLoggedIn && location.pathname === '/') {
+  // Don't show navbar on landing page, login, and signup pages for non-logged-in users
+  if (!isLoggedIn && (location.pathname === '/' || location.pathname === '/login' || location.pathname === '/signup')) {
     return null;
   }
 
