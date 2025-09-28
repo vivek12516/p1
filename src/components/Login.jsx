@@ -22,12 +22,22 @@ export default function Login() {
         body: JSON.stringify({ email: email.toLowerCase(), password }),
       });
 
-      const data = await response.json();
+      let data;
+      try {
+        data = await response.json();
+      } catch (jsonError) {
+        console.error('JSON parsing error:', jsonError);
+        toast.error('Invalid response from server');
+        return;
+      }
 
       if (response.ok) {
         localStorage.setItem('token', data.token);
-        localStorage.setItem('role', data.role);
-        localStorage.setItem('name', data.name);
+        localStorage.setItem('role', data.user?.role || data.role);
+        localStorage.setItem('name', data.user?.name || data.name);
+        if (data.user?.id || data.id) {
+          localStorage.setItem('id', data.user?.id || data.id);
+        }
 
         toast.success('Welcome back!');
         navigate('/home');
