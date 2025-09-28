@@ -10,7 +10,6 @@ const {
   getUserProfile,
   updateUserProfile,
   getDashboardStats
-} = require('../controllers/usercontroller');
 } = require('../controllers/userController');
 
 const router = express.Router();
