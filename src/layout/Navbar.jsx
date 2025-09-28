@@ -1,23 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  BookOpen, 
-  User, 
-  LogOut, 
-  Menu, 
-  X, 
-  Home,
-  GraduationCap,
-  BarChart3,
-  Settings,
-  Bell,
-  Search,
-  ChevronDown,
-  Plus,
-  Award,
-  Users
-} from 'lucide-react';
+import { BookOpen, User, LogOut, Menu, X, Chrome as Home, GraduationCap, ChartBar as BarChart3, Settings, Bell, Search, ChevronDown, Plus, Award, Users } from 'lucide-react';
 import toast from 'react-hot-toast';
 
 export default function Navbar() {
